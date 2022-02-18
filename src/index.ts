@@ -1,5 +1,14 @@
 import { app } from "./app";
-import { CreateStudent } from "./endpoints/Student/createStudent";
+import { Request, Response } from "express";
+import { createStudentController } from "./controllers/Student/createStudent";
+import { getStudentController } from "./controllers/Student/getStudent/index,";
 
-const createStudent = new CreateStudent();
-app.post("/student", createStudent.post);
+app.post("/student", (req: Request, res: Response) => {
+    createStudentController.execute(req, res)
+}
+);
+
+app.get("/student", (req: Request, res: Response) => {
+    getStudentController.execute(req, res);
+}
+);
