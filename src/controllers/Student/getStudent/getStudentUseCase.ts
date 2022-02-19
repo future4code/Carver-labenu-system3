@@ -12,6 +12,6 @@ export class GetStudentUseCase {
         }
         const response: Pessoa[] = await this.IStudentRepository.find("nome", `%${nome}%`);
         const getHobbies = await this.IStudentRepository.get(response);
-        return ;
+        return getHobbies;
     }
 }
