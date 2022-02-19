@@ -1,15 +1,14 @@
 import { Request, Response } from "express";
 import { CustomError } from "../../../services/CustomError";
-import { GetStudentUseCase } from "./getStudentUseCase";
+import { GetClassesActiveUseCase } from "./getClasseActiveUseCase";
 
-export class GetStudentController {
-    constructor(public GetStudentUseCase: GetStudentUseCase) { }
+export class GetClassesActiveController {
+    constructor(public GetClassesActiveUseCase: GetClassesActiveUseCase) { }
 
     async execute(req: Request, res: Response): Promise<void> {
         let errorCode: number = 500;
         try {
-            const nome = req.query.nome;
-            const response = await this.GetStudentUseCase.execute(nome as string);
+            const response = await this.GetClassesActiveUseCase.execute();
 
             res.status(201).send(response);
         } catch (err) {

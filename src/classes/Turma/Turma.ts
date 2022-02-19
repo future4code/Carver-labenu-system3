@@ -16,9 +16,9 @@ export class Turma extends TurmaData {
     constructor(
         public id: string,
         public nome: string,
-        public modulo: number,
-        public estudantes: string[],
         public docentes: string[],
+        public estudantes: string[],
+        public modulo: number = 0
     ) {
         super(id, nome, modulo);
         if (!id) {

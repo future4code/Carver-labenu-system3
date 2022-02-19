@@ -32,7 +32,7 @@ export class CreateStudentUseCase {
             throw new CustomError(409, "Estudante já cadastrado.")
         }
 
-        const classAlreadyExists = await this.IClassRepository.find(student.turma_id);
+        const classAlreadyExists = await this.IClassRepository.find("id", "=", student.turma_id);
         if (!classAlreadyExists.length) {
             throw new CustomError(122, "Turma não existente.")
         }

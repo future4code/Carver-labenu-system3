@@ -40,4 +40,8 @@ export class StudentRepository implements IStudentRepository {
         }));
         return result;
     }
+
+    async update(whereColumn: string, dataWhere: string, updateColumn: string, dataColumn: string): Promise<void> {
+        const result = await this.BaseDatabase.connection("labesystem_estudante").where(whereColumn, dataWhere).update(updateColumn, dataColumn);
+    }
 }

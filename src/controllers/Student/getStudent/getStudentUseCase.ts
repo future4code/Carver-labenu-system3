@@ -6,7 +6,7 @@ import { CustomError } from "../../../services/CustomError";
 export class GetStudentUseCase {
     constructor (private IStudentRepository: IStudentRepository) {}
 
-    async execute (nome: string): Promise<Estudante[] | any> {
+    async execute (nome: string): Promise<Estudante[]> {
         if (!nome) {
             throw new CustomError(422, "Parâmetro inválido.")
         }
