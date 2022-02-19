@@ -2,7 +2,7 @@
 
 ### Descrição
 
-- API de desenvolvida em NodeJS/Express e integrada ao banco de dados MySQL.
+- API de simulação desenvolvida em NodeJS/Express e integrada ao banco de dados MySQL.
 - Principais funcionalidades: integração com banco de dados; adição de estudantes, docentes e turmas; busca por termos; alteração de dados; API estruturada com paradigma orientado a objetos.
 - Bibliotecas auxiliares: KnewJS, Validator.
 - Projeto de fixação desenvolvida em grupo durante as aulas de back-end na Labenu_.
