@@ -7,8 +7,7 @@ export class GetClassesActiveUseCase {
     async execute(): Promise<any> {
 
         const response: TurmaData[] = await this.IClassRepository.find("modulo", ">", "0");
-        const getStudents: any = await this.IClassRepository.get(response);  
-      
+        const getStudents = await this.IClassRepository.get(response);  
         return getStudents;
     }
 }

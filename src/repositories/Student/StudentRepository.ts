@@ -11,11 +11,7 @@ export class StudentRepository implements IStudentRepository {
     ) { }
 
     async create(student: Pessoa): Promise<void> {
-        try {
-            await this.BaseDatabase.connection("labesystem_estudante").insert(student);
-        } catch (err: any) {
-            throw new CustomError(500, err.sqlMessage)
-        }
+        await this.BaseDatabase.connection("labesystem_estudante").insert(student);
     }
 
     async find(column: string, data: string): Promise<Estudante[]> {
@@ -34,14 +30,17 @@ export class StudentRepository implements IStudentRepository {
 
     async get(students: Pessoa[]): Promise<Estudante[]> {
         const result = Promise.all(students.map(async (item) => {
-            const response = await this.BaseDatabase.connection("labesystem_estudante_hobby").select("labesystem_hobby.nome").join("labesystem_hobby", "labesystem_estudante_hobby.hobby_id", "=", "labesystem_hobby.id").where({ estudante_id: item.id })
+            const response = await this.BaseDatabase.connection("labesystem_estudante_hobby")
+                .select("labesystem_hobby.nome")
+                .join("labesystem_hobby", "labesystem_estudante_hobby.hobby_id", "=", "labesystem_hobby.id")
+                .where({ estudante_id: item.id })
             const hobbies = response.map((item) => item.nome);
-            return { ...item, hobbies};
+            return { ...item, hobbies };
         }));
         return result;
     }
 
     async update(whereColumn: string, dataWhere: string, updateColumn: string, dataColumn: string): Promise<void> {
-        const result = await this.BaseDatabase.connection("labesystem_estudante").where(whereColumn, dataWhere).update(updateColumn, dataColumn);
+        await this.BaseDatabase.connection("labesystem_estudante").where(whereColumn, dataWhere).update(updateColumn, dataColumn);
     }
 }

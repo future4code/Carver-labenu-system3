@@ -1,16 +1,17 @@
 import { Request, Response } from "express";
 import { CustomError } from "../../../services/CustomError";
-import { GetStudentUseCase } from "./getStudentUseCase";
+import { ChangeClassTeacherUseCase } from "./changeClassTeacherUseCase";
 
-export class GetStudentController {
-    constructor(public GetStudentUseCase: GetStudentUseCase) { }
+export class ChangeClassTeacherController {
+    constructor(public ChangeClassTeacherUseCase: ChangeClassTeacherUseCase) { }
 
     async execute(req: Request, res: Response): Promise<void> {
         try {
-            const nome = req.query.nome;
-            const response = await this.GetStudentUseCase.execute(nome as string);
+            const { id, turma_id } = req.body;
 
-            res.status(201).send(response);
+            await this.ChangeClassTeacherUseCase.execute(id, turma_id);
+
+            res.status(200).send();
         } catch (err) {
             if (err instanceof CustomError) {
                 res.status(err.statusCode).send({ message: err.message });

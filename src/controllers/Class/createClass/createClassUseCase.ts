@@ -52,6 +52,6 @@ export class CreateClassUseCase {
         }
 
         const newClass = new TurmaData(turma.id, turma.nome, turma.modulo);
-        await this.ITeacherRepository.create(newClass);
+        await this.IClassRepository.create(newClass);
     }
 }
