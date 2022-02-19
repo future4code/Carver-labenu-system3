@@ -18,7 +18,7 @@ export class ChangeClassModuleUseCase {
         if (modulo < 0 || modulo > 6) {
             throw new CustomError(422, "Insira um módulo entre 0 (não começou) a 6.");
         }
-;
+
         if (classAlreadyExists[0].modulo == modulo) {
             throw new CustomError(422, "Turma já pertence a este modulo.")
         }

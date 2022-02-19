@@ -7,7 +7,6 @@ export class CreateStudentController {
     constructor(public CreateStudentUseCase: CreateStudentUseCase) { }
 
     async execute(req: Request, res: Response): Promise<void> {
-        let errorCode: number = 500;
         try {
             const { nome, email, data_nasc, turma_id, hobbies } = req.body;
 
@@ -17,7 +16,7 @@ export class CreateStudentController {
             res.status(201).send();
         } catch (err) {
             if (err instanceof CustomError) {
-                res.status(errorCode).send({ message: err.message });
+                res.status(err.statusCode).send({ message: err.message });
             }
         }
     }

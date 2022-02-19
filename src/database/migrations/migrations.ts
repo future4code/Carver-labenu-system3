@@ -2,6 +2,8 @@ import { BaseDatabase } from "../BaseDatabase";
 import turmas from "./turmas.json";
 import estudantes from "./estudantes.json";
 import docente from "./docente.json"
+import hobbies from "./hobbies.json";
+import especialidades from "./especialidades.json";
 
 class Table {
     constructor(public BaseDatabase: BaseDatabase) { }
@@ -64,7 +66,17 @@ class Table {
             await this.BaseDatabase.connection.insert(turmas).into("labesystem_turma");
             await this.BaseDatabase.connection.insert(estudantes).into("labesystem_estudante");
             await this.BaseDatabase.connection.insert(docente).into("labesystem_docente");
-            
+            await this.BaseDatabase.connection.insert({
+                id: "141e097c-a613-42da-b729-3e440830a3df",
+                nome: "POO"
+            }).into("labesystem_especialidade");
+            await this.BaseDatabase.connection.insert({
+                id: "5b5ab751-c90e-4370-aa95-d85cb2518e42",
+                nome: "Jogar bola"
+            }).into("labesystem_hobby");
+            await this.BaseDatabase.connection.insert(hobbies).into("labesystem_estudante_hobby");
+            await this.BaseDatabase.connection.insert(especialidades).into("labesystem_docente_especialidade");
+
             console.log("Tabelas populadas.")
         }
         catch (err: any) {

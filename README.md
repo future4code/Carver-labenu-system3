@@ -1,33 +1,19 @@
-## LabenuSystem:
+### LabeSystem API
 
-Você estuda na Labenu_ há tanto tempo que já parecem anos, não é? Então, hoje, vamos pedir para criar um sistema que represente o básico da nossa organização. 
+### Descrição
 
-Ele deve possuir, ao menos, as 3 entidades importantes:
+- API de simulação desenvolvida em NodeJS/Express e integrada ao banco de dados MySQL.
+- Principais funcionalidades: integração com banco de dados; adição de estudantes, docentes e turmas; busca por termos; alteração de dados; API estruturada com paradigma orientado a objetos.
+- Bibliotecas auxiliares: KnewJS, Validator.
+- Projeto de fixação desenvolvida em grupo durante as aulas de back-end na Labenu_.
 
-1. Estudantes 
+### Documentação
 
-    Representa estudantes da nossa instituição. Eles devem possuir: id, nome, email, data de nascimento e os principais hobbies dele. 
+https://documenter.getpostman.com/view/18387361/UVkjvd4r
 
-2. Docente
+### Instalação
 
-    Representa docentes da nossa instituição. Eles devem possuir: id, nome, email, data de nascimento e todas as especialidades dele. Há 7 especialidades: React, Redux, CSS, Testes, Typescript, Programação Orientada a Objetos e Backend
-
-3. Turma
-
-    Toda turma é composta das seguintes características: id, nome, data de início, data de término, lista de professores responsáveis, uma lista de alunos e módulo atual em que a turma está.
-
-    O módulo pode assumir os valores de 1 a 7 ou `undefined`, indicando que as aulas dessa turma ainda não começaram. Para esse exercício, vamos considerar que existam dois tipos de turma: integral ou noturna. Há uma restrição para o nome das turmas noturnas: tem que terminar com `-na-night`.
-
-As funcionalidades básicas são:
-
-→ Criar estudante;
-
-→ Criar docente;
-
-→ Criar turma;
-
-→ Adicionar estudante na turma;
-
-→ Adicionar docente na turma;
-
-→ Pegar a idade de algum estudante a partir do id
+- Instale os pacotes necessários com o ``` npm install ```;
+- Configure o seu banco de dados no arquivo ``` .env ```;
+- Utilize o ``` npm run migrations ``` para criar e popular as tabelas do banco de dados com registros básicos;
+- Suba o servidor para testes com o ``` npm run start:dev ```.

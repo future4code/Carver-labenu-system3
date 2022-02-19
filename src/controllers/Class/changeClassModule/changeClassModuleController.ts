@@ -6,7 +6,6 @@ export class ChangeClassModuleController {
     constructor(public ChangeClassModuleUseCase: ChangeClassModuleUseCase) { }
 
     async execute(req: Request, res: Response): Promise<void> {
-        let errorCode: number = 500;
         try {
             const { turma_id, modulo } = req.body;
 
@@ -15,7 +14,7 @@ export class ChangeClassModuleController {
             res.status(200).send();
         } catch (err) {
             if (err instanceof CustomError) {
-                res.status(errorCode).send({ message: err.message });
+                res.status(err.statusCode).send({ message: err.message });
             }
         }
     }
