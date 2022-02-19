@@ -1,0 +1,23 @@
+[
+    {
+        "id": "27c142e9-efa3-4cc7-a0b6-4499asd007576f0",
+        "nome": "Moreira da Silva",
+        "email": "moreirinha@gmail.com",
+        "data_nasc": "2022-02-20",
+        "turma_id": "7a0f2263-b713-4419-8762qwwqwq-223adqweqweqweqwe54a01f9"
+    },
+    {
+        "id": "ccc9ad16-f400-4032-84aa-32c769a8yrt43a0",
+        "nome": "Ariela Soa",
+        "email": "ari@gmail.com",
+        "data_nasc": "2022-02-20",
+        "turma_id": "7a0f2263-b713-4419-8762qwwqwq-223adqweqweqweqwe54a01f9"
+    },
+    {
+        "id": "4951215d-a1d0-4768-a0e9-87c4brtrte8c8dc1",
+        "nome": "Mostaldo Meira",
+        "email": "velhomosta@gmail.com",
+        "data_nasc": "2022-02-20",
+        "turma_id": "7a0f2263-b713-4419-8762qwwqwq-223adqweqweqweqwe54a01f9"
+    }
+]
