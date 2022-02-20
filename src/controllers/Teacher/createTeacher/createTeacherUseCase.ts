@@ -35,11 +35,11 @@ export class CreateTeacherUseCase {
 
         const classAlreadyExists = await this.IClassRepository.find("id", "=", teacher.turma_id);
         if (!classAlreadyExists.length) {
-            throw new CustomError(122, "Turma não existente.")
+            throw new CustomError(422, "Turma não existente.")
         }
 
         if (!new SpecialtyVerify().execute(teacher.especialidades)) {
-            throw new CustomError(122, "Especialidade inválida ou repetida. Escolha entre: JS, CSS, React, Typescript, POO")
+            throw new CustomError(422, "Especialidade inválida ou repetida. Escolha entre: JS, CSS, React, Typescript, POO")
         }
 
         const newTeacher = new Pessoa(teacher.id, teacher.nome, teacher.email, teacher.data_nasc, teacher.turma_id);

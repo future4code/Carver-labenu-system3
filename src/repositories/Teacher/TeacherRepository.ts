@@ -1,6 +1,5 @@
 import { Docente } from "../../classes/Docente/Docente";
 import { Pessoa } from "../../classes/Pessoa/Pessoa";
-import { createTeacherController } from "../../controllers/Teacher/createTeacher";
 import { BaseDatabase } from "../../database/BaseDatabase";
 import { ITeacherRepository } from "../ITeacherRepository";
 
