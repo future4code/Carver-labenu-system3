@@ -1,5 +1,4 @@
 import { BaseDatabase } from "../../../database/BaseDatabase";
-import { HobbyRepository } from "../../../repositories/Hobby/HobbyRepository";
 import { StudentRepository } from "../../../repositories/Student/StudentRepository";
 import { ClassRepository } from "../../../repositories/Class/ClassRepository";
 import { ChangeClassStudentUseCase } from "./changeClassStudentUseCase";

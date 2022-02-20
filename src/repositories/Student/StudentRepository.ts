@@ -1,8 +1,6 @@
-import { response } from "express";
 import { Estudante } from "../../classes/Estudante/Estudante";
 import { Pessoa } from "../../classes/Pessoa/Pessoa";
 import { BaseDatabase } from "../../database/BaseDatabase";
-import { CustomError } from "../../services/CustomError";
 import { IStudentRepository } from "../IStudentRepository";
 
 export class StudentRepository implements IStudentRepository {

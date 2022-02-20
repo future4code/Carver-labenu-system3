@@ -34,7 +34,7 @@ export class CreateStudentUseCase {
 
         const classAlreadyExists = await this.IClassRepository.find("id", "=", student.turma_id);
         if (!classAlreadyExists.length) {
-            throw new CustomError(122, "Turma não existente.")
+            throw new CustomError(422, "Turma não existente.")
         }
 
         const newStudent = new Pessoa(student.id, student.nome, student.email, student.data_nasc, student.turma_id);
