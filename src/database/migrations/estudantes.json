@@ -1,0 +1,16 @@
+[
+    {
+        "id": "27c142e9-efa3-4cc7-a0b6-4499007576f0",
+        "nome": "Mariano Marinho Marinheiro",
+        "email": "marimar@gmail.com",
+        "data_nasc": "2011-12-12",
+        "turma_id": "7a0f2263-b713-4419-8762qwwqwq-223adqweqweqweqwe54a01f9"
+    },
+    {
+        "id": "ccc9ad16-f400-4032-84aa-32c769a843a0",
+        "nome": "Fernanda da Nanda",
+        "email": "nanda@gmail.com",
+        "data_nasc": "2011-12-10",
+        "turma_id": "7a0f2263-b713-4419-8762qwwqwq-223adqweqweqweqwe54a01f9"
+    }
+]
